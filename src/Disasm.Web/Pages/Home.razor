@@ -9,18 +9,61 @@
     }
 </style>
 
+<pre>@LeftTa</pre>
+<pre>@RightTa</pre>
+
 <div class="row g-3 p-3 min-vh-100">
     <div class="col-6 d-flex">
         <div class="editor-panel flex-fill d-flex">
-            <textarea id="left" class="form-control flex-fill my-panel">
+            <textarea @bind="LeftTa" id="left" class="form-control flex-fill my-panel" readonly>
             </textarea>
         </div>
     </div>
     
     <div class="col-6 d-flex">
         <div class="output-panel flex-fill d-flex">
-            <textarea id="right" class="form-control flex-fill my-panel">
+            <textarea @bind="RightTa" id="right" class="form-control flex-fill my-panel">
             </textarea>
         </div>
     </div>
 </div>
+
+@code {
+    // ReSharper disable InconsistentNaming
+
+    public string? LeftTa
+    {
+        get;
+        set
+        {
+            if (field != value)
+            {
+                field = value;
+                OnLeftChange(value);
+            }
+        }
+    }
+
+    public string? RightTa
+    {
+        get;
+        set
+        {
+            if (field != value)
+            {
+                field = value;
+                OnRightChange(value);
+            }
+        }
+    }
+
+    public void OnLeftChange(string? txt)
+    {
+        /* TODO */
+    }
+
+    public void OnRightChange(string? txt)
+    {
+        Console.WriteLine("right: '" + txt + "'");
+    }
+}
