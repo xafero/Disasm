@@ -9,9 +9,6 @@
     }
 </style>
 
-<pre>@LeftTa</pre>
-<pre>@RightTa</pre>
-
 <div class="row g-3 p-3 min-vh-100">
     <div class="col-6 d-flex">
         <div class="editor-panel flex-fill d-flex">
@@ -64,6 +61,28 @@
 
     public void OnRightChange(string? txt)
     {
-        Console.WriteLine("right: '" + txt + "'");
+        if (string.IsNullOrWhiteSpace(txt))
+        {
+            LeftTa = string.Empty;
+            return;
+        }
+        const char nl = '\n';
+        var lines = txt.Split(nl);
+        var res = new List<string>();
+        foreach (var line in lines)
+        {
+            var tmp = line.Replace(" ", "").Trim();
+            try
+            {
+                var hex = Convert.FromHexString(tmp);
+                // TODO
+                res.Add(Convert.ToHexString(hex));
+            }
+            catch (Exception e)
+            {
+                res.Add(e.Message);
+            }
+        }
+        LeftTa = string.Join(nl, res);
     }
 }
