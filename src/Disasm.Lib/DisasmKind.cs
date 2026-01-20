@@ -6,8 +6,8 @@ namespace Disasm.Lib
     {
         None = 0,
 
-        x86,
+        sh3 = 1,
 
-        sh3
+        x86 = 2
     }
 }

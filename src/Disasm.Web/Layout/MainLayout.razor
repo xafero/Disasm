@@ -1,26 +1,27 @@
-﻿@inherits LayoutComponentBase
+﻿@using Disasm.Web.Models
+@inherits LayoutComponentBase
 <div class="page">
     <main>
         <div class="top-row px-4">
             
-            <select class="form-select" aria-label="Arch">
-                <option>x86</option>
-                <option>sh3</option>
+            <select class="form-select" aria-label="Arch" @bind="State.Arch">
+                <option value="1">sh3</option>
+                <option value="2">x86</option>
             </select>
 
-            <select class="form-select" aria-label="Bit">
-                <option>16 Bit</option>
+            <select class="form-select" aria-label="Bit" @bind="State.Bit">
+                <option value="1">16 Bit</option>
             </select>
 
-            <select class="form-select" aria-label="Order">
-                <option>Little Endian</option>
+            <select class="form-select" aria-label="Order" @bind="State.Order">
+                <option value="1">Little Endian</option>
             </select>
 
-            <input class="form-control" aria-label="Base"
-                   readonly value="0x0" />
+            <input class="form-control" aria-label="Base" @bind="State.Base"
+                   readonly />
 
-            <select class="form-select" aria-label="Style">
-                <option>Prettified</option>
+            <select class="form-select" aria-label="Style" @bind="State.Style">
+                <option value="1">Prettified</option>
             </select>
 
             <a href="https://github.com/xafero/Disasm" target="_blank">About</a>

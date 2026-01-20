@@ -1,5 +1,6 @@
 ﻿@page "/"
 @using Disasm.Lib
+@using Disasm.Web.Models
 
 <PageTitle>Disasm Max | Online Disassembler</PageTitle>
 
@@ -61,7 +62,7 @@
             LeftTa = string.Empty;
             return;
         }
-        var kind = DisasmKind.sh3; // TODO
+        var kind = (DisasmKind)State.Arch;
         LeftTa = Disasms.Parse(txt, kind).ToText();
     }
 }
