@@ -1,4 +1,5 @@
 ﻿@page "/"
+@using Disasm.Lib
 
 <PageTitle>Disasm Max | Online Disassembler</PageTitle>
 
@@ -28,61 +29,39 @@
 @code {
     // ReSharper disable InconsistentNaming
 
-    public string? LeftTa
+    private string? LeftTa
     {
         get;
         set
         {
-            if (field != value)
-            {
-                field = value;
-                OnLeftChange(value);
-            }
+            if (field == value) return;
+            OnLeftChange(field = value);
         }
     }
 
-    public string? RightTa
+    private string? RightTa
     {
         get;
         set
         {
-            if (field != value)
-            {
-                field = value;
-                OnRightChange(value);
-            }
+            if (field == value) return;
+            OnRightChange(field = value);
         }
     }
 
-    public void OnLeftChange(string? txt)
+    private static void OnLeftChange(string? txt)
     {
         /* TODO */
     }
 
-    public void OnRightChange(string? txt)
+    private void OnRightChange(string? txt)
     {
         if (string.IsNullOrWhiteSpace(txt))
         {
             LeftTa = string.Empty;
             return;
         }
-        const char nl = '\n';
-        var lines = txt.Split(nl);
-        var res = new List<string>();
-        foreach (var line in lines)
-        {
-            var tmp = line.Replace(" ", "").Trim();
-            try
-            {
-                var hex = Convert.FromHexString(tmp);
-                // TODO
-                res.Add(Convert.ToHexString(hex));
-            }
-            catch (Exception e)
-            {
-                res.Add(e.Message);
-            }
-        }
-        LeftTa = string.Join(nl, res);
+        var kind = DisasmKind.sh3; // TODO
+        LeftTa = Disasms.Parse(txt, kind).ToText();
     }
 }

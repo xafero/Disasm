@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Disasm.Web", "src\Disasm.Web\Disasm.Web.csproj", "{692AD304-4CEC-416F-9107-E7A4403CFECB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Disasm.Lib", "src\Disasm.Lib\Disasm.Lib.csproj", "{ADEB4F37-8817-467C-A7E7-0FF695941911}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,8 +29,22 @@ Global
 		{692AD304-4CEC-416F-9107-E7A4403CFECB}.Release|x64.Build.0 = Release|Any CPU
 		{692AD304-4CEC-416F-9107-E7A4403CFECB}.Release|x86.ActiveCfg = Release|Any CPU
 		{692AD304-4CEC-416F-9107-E7A4403CFECB}.Release|x86.Build.0 = Release|Any CPU
+		{ADEB4F37-8817-467C-A7E7-0FF695941911}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADEB4F37-8817-467C-A7E7-0FF695941911}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADEB4F37-8817-467C-A7E7-0FF695941911}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{ADEB4F37-8817-467C-A7E7-0FF695941911}.Debug|x64.Build.0 = Debug|Any CPU
+		{ADEB4F37-8817-467C-A7E7-0FF695941911}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{ADEB4F37-8817-467C-A7E7-0FF695941911}.Debug|x86.Build.0 = Debug|Any CPU
+		{ADEB4F37-8817-467C-A7E7-0FF695941911}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADEB4F37-8817-467C-A7E7-0FF695941911}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ADEB4F37-8817-467C-A7E7-0FF695941911}.Release|x64.ActiveCfg = Release|Any CPU
+		{ADEB4F37-8817-467C-A7E7-0FF695941911}.Release|x64.Build.0 = Release|Any CPU
+		{ADEB4F37-8817-467C-A7E7-0FF695941911}.Release|x86.ActiveCfg = Release|Any CPU
+		{ADEB4F37-8817-467C-A7E7-0FF695941911}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
 	EndGlobalSection
 EndGlobal
