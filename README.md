@@ -1,4 +1,4 @@
-# Disasm [![GitHub builds](https://github.com/xafero/Disasm/workflows/GitHub%20CI/badge.svg)](https://github.com/xafero/Disasm/actions)
+# Disasm [![GitHub builds](https://github.com/xafero/Disasm/actions/workflows/dotnet.yml/badge.svg)](https://github.com/xafero/Disasm/actions)
 Disasm is a C# project that turns low-level machine code into human-readable text.
 
 ## Overview
