@@ -7,7 +7,7 @@
 
   <ItemGroup>
     <PackageReference Include="Iced" Version="1.21.0" />
-    <PackageReference Include="SuperHot" Version="1.0.0" />
+    <PackageReference Include="SuperHot" Version="1.0.3" />
   </ItemGroup>
 
 </Project>
